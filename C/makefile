@@ -1,7 +1,7 @@
 CC     := gcc
 CFLAGS := -Wall -Wextra -g
 
-SRC := main.c
+SRC := structure.c
 OBJ := $(SRC:.c=.o)
 
 BIN ?= $(basename $(SRC))

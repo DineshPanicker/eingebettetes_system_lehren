@@ -16,8 +16,8 @@ int main(int argc, char *argv[])
     }
     printf("---\n");
     // set up the pointers to the start of the arrays
-    int *cur_age = (int *)names; // can be buggy!!
-    char **cur_name = names;     // Das ist ein zeiger auf zeiger auf zeichen konzept
+    int *cur_age = ages;     // can be buggy!!
+    char **cur_name = names; // Das ist ein zeiger auf zeiger auf zeichen konzept
     // second way using pointers
     for (i = 0; i < count; i++)
     {
