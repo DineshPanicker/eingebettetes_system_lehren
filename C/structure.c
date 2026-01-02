@@ -34,13 +34,18 @@ void Person_destroy(struct Person *who)
 
 void Person_print(struct Person *who)
 {
+    if(who == NULL)
+    {
+        printf("Invalid operation!!\n");
+        return;
+    }
     printf("Name: %s\n", who->name);
     printf("\tAge: %d\n", who->age);
     printf("\tHeight: %d\n", who->height);
     printf("\tWeight: %d\n", who->weight);
 }
 
-int main(int argc, char *argv[])
+int main()
 {
     struct Person *joe = Person_create("Joe Alex", 47, 147, 93);
     struct Person *dinesh = Person_create("Dinesh Panicker", 25, 183, 82);
@@ -49,6 +54,7 @@ int main(int argc, char *argv[])
     printf("Joe is stored at: %p\n", joe);
     Person_print(joe);
     printf("Dinesh is stored at: %p\n", dinesh);
+    free(dinesh);
     Person_print(dinesh);
 
     Person_destroy(joe);
