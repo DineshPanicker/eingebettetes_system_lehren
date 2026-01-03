@@ -3,12 +3,12 @@
 #include <stdio.h>
 #include <string.h>
 
-typedef struct 
+typedef struct
 {
     char name[256];
     int age;
     double average;
-}Student;
+} Student;
 
 void *mem_cpy(void *dest, void *src, int n);
 
@@ -17,36 +17,48 @@ int main()
     char src[] = "copy this";
     char dest[100];
 
-    char *dest_ptr = memcpy(dest, src, strlen(src)+1);
+    char *dest_ptr = mem_cpy(dest, src, strlen(src) + 1);
 
-    printf("src: %s\n",src);
-    printf("dest %s\n",dest);
+    printf("src: %s\n", src);
+    printf("dest %s\n", dest);
 
-    printf("dest_ptr: %p\n",dest_ptr);
-    printf("    dest: %p\n",dest);
+    printf("dest_ptr: %p\n", dest_ptr);
+    printf("    dest: %p\n", dest);
 
-    double src_array[5]={1.1,2.2,3.3,4.4,5.5};
+    double src_array[5] = {1.1, 2.2, 3.3, 4.4, 5.5};
     double dest_array[5];
 
-    memcpy(dest_array, src_array, sizeof(src_array));
+    mem_cpy(dest_array, src_array, sizeof(src_array));
 
-    for(int i=0;i<5;i++)
-        printf("dest_array[%d] = %f\n",i,dest_array[i]);
-        
+    for (int i = 0; i < 5; i++)
+        printf("dest_array[%d] = %f\n", i, dest_array[i]);
+
+    Student student1;
+
+    strcpy(student1.name, "Dinesh");
+    student1.age = 25;
+    student1.average = 83.54;
+
+    Student student2;
+
+    mem_cpy(&student2, &student1, sizeof(Student));
+
+    printf("Name: %s\n Age: %d\n Avg: %f\n", student2.name, student2.age, student2.average);
+
     return 0;
 }
 
 void *mem_cpy(void *dest, void *src, int n)
 {
-    if(dest == NULL)
+    if (dest == NULL)
         return NULL;
 
     char *char_dest = (char *)dest;
     char *char_src = (char *)src;
 
-    for(int i = 0;i<n;i++)
+    for (int i = 0; i < n; i++)
     {
-        char_dest[i]=char_src[i];
+        char_dest[i] = char_src[i];
     }
     return dest;
 }
