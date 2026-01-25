@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeLite_Workspace Name="CPP-Windows" Database="" Version="10000">
+  <Project Name="CPP-dsa-lehren" Path="CPP-dsa-lehren/CPP-dsa-lehren.project" Active="Yes"/>
+  <BuildMatrix>
+    <WorkspaceConfiguration Name="Release">
+      <Environment/>
+      <Project Name="CPP-dsa-lehren" ConfigName="Release"/>
+    </WorkspaceConfiguration>
+    <WorkspaceConfiguration Name="Debug">
+      <Environment/>
+      <Project Name="CPP-dsa-lehren" ConfigName="Debug"/>
+      <Project Name="CPP-dsa-lehren" ConfigName="Debug"/>
+    </WorkspaceConfiguration>
+  </BuildMatrix>
+</CodeLite_Workspace>
